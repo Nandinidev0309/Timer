@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card{
+            border: 2px solid ;
+            height: 200px;
+            border-radius: 20px;
+            width: 500px;
+            text-align: center;
+            background-color: rgb(145, 225, 116);
+            margin-top: 200px;
+            margin-left:35% ;
+
+        }
+        .dv{
+            border: 2px solid black;
+            border-radius: 20px;
+            height: 50px;
+            width: 300px;
+            padding: 40px;
+            margin: 50px;
+            margin-left: 60px;
+            background-color: azure;
+         
+        }
+        .first{
+            background-color: rgb(135, 191, 172);
+            padding: 20px;
+            border-radius: 10px;
+            width: 100px;
+        }
+        .second{
+            background-color: rgb(174, 127, 255);
+            padding: 20px;
+            border-radius: 10px;
+            width: 100px;
+        }
+        .third{
+            background-color: rgb(255, 127, 172);
+            padding: 20px;
+            border-radius: 10px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="card">
+      <div class="dv">  
+    <h1 id="head"></h1>
+</div>
+
+    
+    <button id="start" class="first" >start</button>
+    <button id="stop" class="second" onclick="stopof()">stop</button>
+    <button id="reset" class="third" onclick="resetof()">reset</button>
+
+</div>
+
+    <script>
+        let start=document.getElementById("start")
+        let stop=document.getElementById("stop")
+        let rest=document.getElementById("reset")
+        let head=document.getElementById("head")
+        // let div=document.getElementsByTagName("div")
+        // div.style.color="blue";
+        let i=0
+        let y 
+            start.addEventListener("click",()=>{
+                y=setInterval(()=>{
+                        console.log(i++);
+                        head.textContent=i++
+                        head.style.color="green"
+                },1000)
+        }
+        )
+        function stopof(){
+            clearInterval(y)
+        }
+        function resetof(){
+            head.textContent="0"
+            // clear()
+            i=0
+        }
+
+
+        
+
+
+        
+    </script>
+</body>
+</html>
